@@ -1,0 +1,83 @@
+@font-face {
+  font-family: "zr-iconfont"; /* Project id 4040095 */
+  src: url('iconfont.woff2?t=1686728328004') format('woff2'),
+       url('iconfont.woff?t=1686728328004') format('woff'),
+       url('iconfont.ttf?t=1686728328004') format('truetype');
+}
+
+.zr-iconfont {
+  font-family: "zr-iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zr-sharp:before {
+  content: "\eb99";
+}
+
+.zr-luminance:before {
+  content: "\e634";
+}
+
+.zr-contrast-ratio:before {
+  content: "\e6e4";
+}
+
+.zr-add:before {
+  content: "\e600";
+}
+
+.zr-sub:before {
+  content: "\e8e6";
+}
+
+.zr-edit:before {
+  content: "\e610";
+}
+
+.zr-shangchuan:before {
+  content: "\e606";
+}
+
+.zr-xiazai:before {
+  content: "\e607";
+}
+
+.zr-fabuguanli:before {
+  content: "\e608";
+}
+
+.zr-yidong:before {
+  content: "\e609";
+}
+
+.zr-jiemuguanli:before {
+  content: "\e60a";
+}
+
+.zr-delete:before {
+  content: "\e603";
+}
+
+.zr-export:before {
+  content: "\e60d";
+}
+
+.zr-minus:before {
+  content: "\e828";
+}
+
+.zr-plus:before {
+  content: "\e829";
+}
+
+.zr-back:before {
+  content: "\e6d9";
+}
+
+.zr-filter:before {
+  content: "\e69f";
+}
+

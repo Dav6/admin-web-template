@@ -1,0 +1,43 @@
+@import "./iconFont/iconfont.css";
+
+
+@font-face {
+    font-family: 'BigruixianBlackGBV';
+    src: url('BigruixianBlackGBV.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+}
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url('./PingFang/PingFangSC-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+
+}
+@font-face {
+    font-family: 'PingFangSC-Semibold';
+    src: url('./PingFang/PingFangSC-Semibold.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+
+}
+@font-face {
+    font-family: 'PingFangSC-Medium';
+    src: url('./PingFang/PingFangSC-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+
+}
+@font-face {
+    font-family: 'TRENDS';
+    src: url('./ShiShangZhongHeiJianTi-1.ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: auto;
+
+}
+

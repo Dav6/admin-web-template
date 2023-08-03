@@ -1,0 +1,89 @@
+<!--
+    @Author:  戴伟
+    @Date:  2023/06/16 15:35:48
+    @FilePath:  src\views\pms\programTemplate\programTemplateList\index.vue
+    @LastEditTime:  ''
+    @LastEditors:  ''
+    @Description:  do.....
+-->
+
+
+<template>
+  <page-container
+      :title="programTemplateListStore.pageConfig.title"
+      :isShowBack="programTemplateListStore.pageConfig.isShowBack"
+      :isShowAside="programTemplateListStore.pageConfig.isShowAside"
+      :treeType="programTemplateListStore.pageConfig.treeType"
+      :isFilter="programTemplateListStore.pageConfig.isFilter"
+      :isShowCheckbox="programTemplateListStore.pageConfig.isShowCheckbox"
+      :isHighlightCurrent="programTemplateListStore.pageConfig.isHighlightCurrent"
+      :treeCurrent="programTemplateListStore.pageConfig.treeCurrent"
+      :expandOnClickNode="programTemplateListStore.pageConfig.expandOnClickNode"
+      :treeDefaultExpandedKeys="programTemplateListStore.pageConfig.treeDefaultExpandedKeys"
+      @onTreeCurrentChange="(data:any) => goTo('onTreeCurrentChange', data)"
+      :isShowPaging="programTemplateListStore.pageConfig.isShowPaging"
+      :pageData="programTemplateListStore.listQuery"
+      @onPageSizeChange="(data:any) => goTo('onPageSizeChange', data)"
+      @onPageCurrentChange="(data:any) => goTo('onPageCurrentChange', data)"
+  >
+    <template #header>
+<!--      <header-container></header-container>-->
+    </template>
+    <template #container-header>
+      <header-container></header-container>
+    </template>
+
+    <container></container>
+
+    <add-edit-dialog></add-edit-dialog>
+    <tree-dialog></tree-dialog>
+  </page-container>
+</template>
+
+<script setup lang="ts">
+import {ref, reactive, computed, watch} from "vue";
+import {useRoute, useRouter} from "vue-router";
+
+// 不能直接设置为 Header 特殊字段 标签读取不到
+import HeaderContainer from "./components/header/index.vue";
+import Container from "./components/container/index.vue";
+import AddEditDialog from "./components/addEditDialog/index.vue";
+import TreeDialog from "./components/treeDialog/index.vue"
+
+const route:any = useRoute();
+const router:any = useRouter();
+
+import {useProgramTemplateListStore} from "./store";
+
+const programTemplateListStore = useProgramTemplateListStore();
+
+// 接口请求方法放这
+const init = () => {
+  // getList();
+  programTemplateListStore.init(router,route);
+};
+
+// 统一执行初始化方法
+init();
+
+const goTo = (key: string, data: any) => {
+  console.log(key, data);
+  if (key === "onTreeCurrentChange") {
+      programTemplateListStore.onTreeCurrentChange(data)
+  }
+
+  if (key === "onPageSizeChange") {
+      programTemplateListStore.onPageSizeChange(data)
+  }
+  if (key === "onPageCurrentChange") {
+      programTemplateListStore.onPageCurrentChange(data)
+  }
+};
+</script>
+
+<style scoped lang="less">
+.table-container {
+  padding: 0 60px;
+  height: 100%;
+}
+</style>
